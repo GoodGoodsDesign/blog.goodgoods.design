@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Good Goods Design Blog - 育兒生活美學</title>
+  <meta name="description" content="Good Goods Design 部落格 - 分享育兒好物研究、優雅育兒提案、親子美學旅歷等精彩內容">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABZ0lEQVR4nO2WvUoDQRSFvxhFLCwsLGxsJFoJNhYWNha2NnY+gJ2FjY2FjY2FjY2NhY2NjY2NjY1gYyMIFhYWFhYWFhZi4cLAEnaH3WR2l/jBwDCzc+fMuXdmFv5rWrUG7AHXwBvQBx6BK+AAmAVGgB1gGxgDFoFz4BzoAg8Fd8kZANPAOjAFTAATwCxwBpwCbeBRG+slp0dCNoAXoAs8A0/AA9ABroEWcAEsAMvAJHAM7AO9f+4AYNBHi8AAGFYfKHaAT6BfchfMMASm9TxvB+5/wPgCPgq+q/gP0i0xC2ywBZ6Bx4Jm1S8UvAqc/E/Fn4E14E01fwVW1PxDNb8FVhKaqx+BVaAJHKj5p8BKUnP1Y7AKNIEj4FDNbwIrQDOhufoJWAGa+sFiB5gJNF8JHCcxVz8Dq0DDPwR2gRkgDDQnNdYHYNVvwC6QBjNAE2gmNdcHoAkc6Qe/U82v/hHCL3u7O6G6jtnsAAAAAElFTkSuQmCC">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Good Goods Design Blog</h1>
+      <p>育兒生活美學 · 分享質感育兒的每一刻</p>
+    </div>
+  </header>
+
+  <nav class="category-nav">
+    <ul>
+      <li><a href="#" class="active">全部文章</a></li>
+      <li><a href="#research">【研物誌】育兒好物研究室</a></li>
+            <li><a href="#lifestyle">【生活學】優雅育兒提案</a></li>
+            <li><a href="#reflection">【留白處】父母的自我對話</a></li>
+            <li><a href="#journey">【逐光行】親子美學旅歷</a></li>
+            <li><a href="#moments">【時光紀】成長的微小瞬間</a></li>
+    </ul>
+  </nav>
+
+  <main class="container articles-section">
+    
+    <div class="articles-grid">
+      
+      <article class="article-card" data-category="lifestyle">
+        <a href="https://blog.goodgoods.design/lifestyle/20260131_001.html">
+          <img src="https://blog.goodgoods.design/images/20260131_cropped-image_n644ul.webp" alt="告別紅屁屁的親膚美學：在日常更換間，實踐最溫柔的「生活學」" class="article-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect fill=%22%23f3f4f6%22 width=%22400%22 height=%22200%22/%3E%3Ctext x=%22200%22 y=%22100%22 text-anchor=%22middle%22 fill=%22%239ca3af%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+          <div class="article-content">
+            <span class="article-category">【生活學】優雅育兒提案</span>
+            <h2 class="article-title">告別紅屁屁的親膚美學：在日常更換間，實踐最溫柔的「生活學」</h2>
+            <p class="article-excerpt">育兒生活不該只是疲於奔命，即便是平凡的換尿布日常，也能是一場關於愛的儀式。本文分享如何透過「減法照護」與正確的「親膚選擇」，讓新手爸媽告別寶寶紅屁屁的焦慮。我們將從生理照護到選物哲學，帶你重新定義育兒的優雅節奏，給孩子一個最乾爽、無負擔的成長起點。</p>
+            <div class="article-meta">
+              <span>小小媽媽</span>
+              <span>2026/1/31</span>
+            </div>
+          </div>
+        </a>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Good Goods Design. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Category filter
+    document.querySelectorAll('.category-nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.category-nav a').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        
+        const category = this.getAttribute('href').replace('#', '');
+        const cards = document.querySelectorAll('.article-card');
+        
+        cards.forEach(card => {
+          if (!category || card.dataset.category === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
