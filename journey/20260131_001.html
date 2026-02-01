@@ -91,29 +91,42 @@
     .search-result-item h4 { font-size: 0.95rem; margin-bottom: 4px; }
     .search-result-item p { font-size: 0.8rem; color: #666; }
     
-    /* Category Nav */
+    /* Category Nav - matching homepage exactly */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
     .category-nav {
       background: #fff;
-      padding: 0.75rem 2rem;
+      border-bottom: 1px solid #e5e7eb;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .category-nav::-webkit-scrollbar { display: none; }
+    .category-nav ul {
       display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      border-bottom: 1px solid #eee;
-      position: sticky;
-      top: 58px;
-      z-index: 99;
-    }
-    .cat-pill {
-      padding: 0.35rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      text-decoration: none;
+      gap: 8px;
+      list-style: none;
+      padding: 12px 0;
+      margin: 0;
       white-space: nowrap;
-      transition: opacity 0.2s;
     }
-    .cat-pill:hover { opacity: 0.85; }
-    .cat-pill.active { box-shadow: 0 0 0 2px #333; }
+    .category-nav li a {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      color: #6b7280;
+      text-decoration: none;
+      border: 1px solid transparent;
+    }
+    .category-nav li a:hover { 
+      background: #f3f4f6;
+      color: #1f2937;
+    }
+    .category-nav li a.active {
+      background: #CAB7AA;
+      color: white;
+    }
     
     /* Main content */
     .main-wrapper {
@@ -273,7 +286,8 @@
     
     @media (max-width: 768px) {
       .site-header { padding: 1rem; }
-      .category-nav { padding: 0.5rem 1rem; top: 54px; }
+      .container { padding: 0 16px; }
+      .category-nav ul { padding: 12px 0; }
       .main-wrapper { padding: 1.5rem 1rem; }
       h1 { font-size: 1.5rem; }
       .related-grid { grid-template-columns: repeat(2, 1fr); }
@@ -298,12 +312,14 @@
   </header>
   
   <nav class="category-nav">
-    <a href="/#section-research" class="cat-pill" style="background:#8A6C5F;color:#fff">研物誌育兒好物研究室</a>
-          <a href="/#section-lifestyle" class="cat-pill" style="background:#BFA38A;color:#333">生活學優雅育兒提案</a>
-          <a href="/#section-journey" class="cat-pill active" style="background:#544339;color:#fff">逐光行親子美學旅歷</a>
-          <a href="/#section-moments" class="cat-pill" style="background:#F5E9D3;color:#333">時光紀成長的微小瞬間</a>
-          <a href="/#section-parenting" class="cat-pill" style="background:#CAB7AA;color:#333">懂育兒爸媽的省心筆記</a>
-          <a href="/#section-charity" class="cat-pill" style="background:#E6C889;color:#333">拾公益點亮美好日常</a>
+    <div class="container"><ul>
+            <li><a href="/#section-research">【研物誌】育兒好物研究室</a></li>
+            <li><a href="/#section-lifestyle">【生活學】優雅育兒提案</a></li>
+            <li><a href="/#section-journey" class="active">【逐光行】親子美學旅歷</a></li>
+            <li><a href="/#section-moments">【時光紀】成長的微小瞬間</a></li>
+            <li><a href="/#section-parenting">【懂育兒】爸媽的省心筆記</a></li>
+            <li><a href="/#section-charity">【拾公益】點亮美好日常</a></li>
+          </ul></div>
   </nav>
   
   <main class="main-wrapper">
@@ -369,11 +385,11 @@
       <h3>你可能有興趣</h3>
       <div class="related-grid">
         
-        <a href="https://blog.goodgoods.design/journey/20260201_002.html" class="related-card">
-          <img src="https://blog.goodgoods.design/images/20260201_cropped-image_21zukl.webp" alt="Test" class="related-img">
+        <a href="https://blog.goodgoods.design/lifestyle/20260131_001.html" class="related-card">
+          <img src="https://blog.goodgoods.design/images/20260131_cropped-image_n644ul.webp" alt="告別紅屁屁的親膚美學：在日常更換間，實踐最溫柔的「生活學」" class="related-img">
           <div class="related-content">
-            <span class="related-cat" style="background:#544339;color:#fff">逐光行|親子美學旅歷</span>
-            <h4>Test</h4>
+            <span class="related-cat" style="background:#BFA38A;color:#333">生活學|優雅育兒提案</span>
+            <h4>告別紅屁屁的親膚美學：在日常更換間，實踐最溫柔的「生活學」</h4>
           </div>
         </a>
       
@@ -382,6 +398,14 @@
           <div class="related-content">
             <span class="related-cat" style="background:#F5E9D3;color:#333">時光紀|成長的微小瞬間</span>
             <h4>成長的微小瞬間｜把日子過得慢一點，只為記住你每一次的轉身</h4>
+          </div>
+        </a>
+      
+        <a href="https://blog.goodgoods.design/journey/20260201_002.html" class="related-card">
+          <img src="https://blog.goodgoods.design/images/20260201_cropped-image_21zukl.webp" alt="Test" class="related-img">
+          <div class="related-content">
+            <span class="related-cat" style="background:#544339;color:#fff">逐光行|親子美學旅歷</span>
+            <h4>Test</h4>
           </div>
         </a>
       </div>
