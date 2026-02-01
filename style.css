@@ -1,7 +1,7 @@
 /* Blog Homepage Styles - HubSpot Inspired */
 :root {
-  --primary-color: #4ade80;
-  --primary-dark: #22c55e;
+  --primary-color: #CAB7AA;
+  --primary-dark: #8A6C5F;
   --text-color: #1f2937;
   --text-muted: #6b7280;
   --text-light: #9ca3af;
@@ -11,7 +11,6 @@
   --border-color: #e5e7eb;
   --category-research: #8A6C5F;
   --category-lifestyle: #BFA38A;
-  --category-reflection: #E0D9CF;
   --category-journey: #544339;
   --category-moments: #F5E9D3;
   --category-parenting: #CAB7AA;
@@ -130,7 +129,6 @@ a { text-decoration: none; color: inherit; }
 /* Category color pills */
 .cat-research { background: var(--category-research) !important; color: white !important; }
 .cat-lifestyle { background: var(--category-lifestyle) !important; color: #1f2937 !important; }
-.cat-reflection { background: var(--category-reflection) !important; color: #1f2937 !important; }
 .cat-journey { background: var(--category-journey) !important; color: white !important; }
 .cat-moments { background: var(--category-moments) !important; color: #1f2937 !important; }
 .cat-parenting { background: var(--category-parenting) !important; color: #1f2937 !important; }
@@ -179,7 +177,7 @@ a { text-decoration: none; color: inherit; }
   padding: 4px 12px;
   border-radius: 12px;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 12px;
 }
 
@@ -253,7 +251,7 @@ a { text-decoration: none; color: inherit; }
 
 .recent-category {
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 500;
   padding: 2px 8px;
   border-radius: 10px;
   display: inline-block;
@@ -348,7 +346,7 @@ a { text-decoration: none; color: inherit; }
 
 .card-category {
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 500;
   padding: 3px 10px;
   border-radius: 10px;
   display: inline-block;
