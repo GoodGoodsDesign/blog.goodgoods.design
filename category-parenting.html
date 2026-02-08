@@ -25,8 +25,12 @@
 
   
   <nav class="category-nav">
-    <div class="container">
-      <ul>
+    <div class="container category-nav-inner">
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="開啟分類選單">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <span>分類</span>
+      </button>
+      <ul class="category-list" id="categoryList">
         <li><a href="https://blog.goodgoods.design/category-research.html" class="cat-pill" data-category="research">【研物誌】育兒好物研究室</a></li>
 <li><a href="https://blog.goodgoods.design/category-lifestyle.html" class="cat-pill" data-category="lifestyle">【生活學】優雅育兒提案</a></li>
 <li><a href="https://blog.goodgoods.design/category-journey.html" class="cat-pill" data-category="journey">【逐光行】親子美學旅歷</a></li>
@@ -36,6 +40,23 @@
       </ul>
     </div>
   </nav>
+  <script>
+  (function(){
+    var btn = document.getElementById('hamburgerBtn');
+    var list = document.getElementById('categoryList');
+    if(btn && list) {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        list.classList.toggle('open');
+      });
+      document.addEventListener('click', function(e) {
+        if(!list.contains(e.target) && !btn.contains(e.target)) {
+          list.classList.remove('open');
+        }
+      });
+    }
+  })();
+  </script>
 
   <!-- Category Content -->
   <section class="category-section" style="border-top: none;">
