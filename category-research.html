@@ -25,8 +25,12 @@
 
   
   <nav class="category-nav">
-    <div class="container">
-      <ul>
+    <div class="container category-nav-inner">
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="開啟分類選單">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <span>分類</span>
+      </button>
+      <ul class="category-list" id="categoryList">
         <li><a href="https://blog.goodgoods.design/category-research.html" class="cat-pill active" data-category="research">【研物誌】育兒好物研究室</a></li>
 <li><a href="https://blog.goodgoods.design/category-lifestyle.html" class="cat-pill" data-category="lifestyle">【生活學】優雅育兒提案</a></li>
 <li><a href="https://blog.goodgoods.design/category-journey.html" class="cat-pill" data-category="journey">【逐光行】親子美學旅歷</a></li>
@@ -36,6 +40,23 @@
       </ul>
     </div>
   </nav>
+  <script>
+  (function(){
+    var btn = document.getElementById('hamburgerBtn');
+    var list = document.getElementById('categoryList');
+    if(btn && list) {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        list.classList.toggle('open');
+      });
+      document.addEventListener('click', function(e) {
+        if(!list.contains(e.target) && !btn.contains(e.target)) {
+          list.classList.remove('open');
+        }
+      });
+    }
+  })();
+  </script>
 
   <!-- Category Content -->
   <section class="category-section" style="border-top: none;">
@@ -46,7 +67,24 @@
           【研物誌】育兒好物研究室
         </h2>
       </div>
-      <p style="color: #666; text-align: center; padding: 48px 0;">此分類尚無文章</p>
+      
+      <div class="section-grid">
+        
+      <article class="article-card">
+        <a href="https://blog.goodgoods.design/research/20260208_001.html">
+          <img src="https://blog.goodgoods.design/images/20260208_cropped-image_rfc6u1.webp" alt="把飛行變成遊樂場！Stokke JetKids 騎乘行李箱實測：是玩具、是睡床，更是長途飛行的安睡神隊友" class="card-image" onerror="this.style.display='none'" />
+          <div class="card-content">
+            <h3 class="card-title">把飛行變成遊樂場！Stokke JetKids 騎乘行李箱實測：是玩具、是睡床，更是長途飛行的安睡神隊友</h3>
+            <p class="card-excerpt">帶幼兒搭飛機不再是惡夢。本篇實測 Stokke JetKids BedBox 的極簡打包術、騎乘功能與睡床模式。從出發前的收納智慧，到機上的安穩熟睡，揭秘如何搭配 Noopii 美好尿布的長效吸收力，讓爸媽優雅享受旅程。</p>
+            <div class="card-meta">
+              <span>Good Goods</span>
+              <span>2026/2/8</span>
+            </div>
+          </div>
+        </a>
+      </article>
+      </div>
+      
     </div>
   </section>
 
