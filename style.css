@@ -105,17 +105,22 @@ a { text-decoration: none; color: inherit; }
 .category-nav {
   background: var(--bg-color, #ffffff);
   border-bottom: 1px solid var(--border-color, #e5e7eb);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+.category-nav-inner {
+  position: relative;
 }
 .category-nav::-webkit-scrollbar { display: none; }
-.category-nav ul {
+.category-list {
   display: flex;
   gap: 8px;
   list-style: none;
   padding: 12px 0;
   white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
+.category-list::-webkit-scrollbar { display: none; }
 .category-nav li a {
   display: inline-block;
   padding: 8px 16px;
@@ -135,6 +140,53 @@ a { text-decoration: none; color: inherit; }
 .category-nav li a[data-active="true"] {
   background: var(--primary-color, #CAB7AA);
   color: white;
+}
+
+/* Hamburger menu - hidden on desktop */
+.hamburger-btn {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color, #1f2937);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.hamburger-btn:hover {
+  background: var(--bg-light, #f3f4f6);
+}
+
+@media (max-width: 768px) {
+  .hamburger-btn { display: flex; }
+  .category-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-color, #ffffff);
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    padding: 8px;
+    gap: 4px;
+    z-index: 200;
+    white-space: normal;
+  }
+  .category-list.open { display: flex; }
+  .category-nav-inner { padding: 10px 0; }
+  .category-nav li a {
+    display: block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+  }
 }
 
 /* Category color pills */
@@ -553,7 +605,6 @@ a { text-decoration: none; color: inherit; }
   .featured-image { height: 250px; }
   .featured-title { font-size: 1.25rem; }
   .section-grid { grid-template-columns: 1fr; }
-  .category-nav ul { padding: 12px 0; }
   .latest-each-section .section-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
 
